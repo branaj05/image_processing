@@ -1,4 +1,5 @@
 #%%
+#%%
 import numpy as np
 import matplotlib.pyplot as plt
 def gaussian_psf(size, sigma, dx, dy):
@@ -28,6 +29,7 @@ if __name__ == "__main__":
     K = 8
     # define the sub-pixel shift (dx, dy) and the standard deviation (sig) for the Gaussian PSF
     dx, dy = 0.0, 0.0
+    # approximate a point source as a Gaussian distribution with a standard deviation of 1 pixel
     sig = 1.0
     N = np.ceil(K * sig).astype(int)  # Ensure N is an integer and large enough to capture the PSF
     if N % 2 == 0: N+= 1  # Ensure N is odd to have a central pixel
